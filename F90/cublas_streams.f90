@@ -5,9 +5,9 @@ program main
 
     integer :: dim, stat, i, j, k, batch_count
     integer(8) :: bytes
-    real(8),dimension(:,:,:),allocatable :: A, B, C
+    real(8),dimension(:,:,:), pointer :: A, B, C
     real(8) :: alpha, beta, index, sum
-    type(C_PTR), dimension(:), allocatable :: d_A, d_B, d_C, streams
+    type(C_PTR), dimension(:), pointer :: d_A, d_B, d_C, streams
     type(C_PTR) :: handle
 
     integer :: sizeof_double

@@ -5,10 +5,10 @@ program main
 
     integer :: dim, stat, i, j, k, batch_count
     integer(8) :: bytes
-    real(8),dimension(:,:,:),allocatable :: A, B, C
+    real(8),dimension(:,:,:), pointer :: A, B, C
     real(8) :: alpha, beta, index, sum
     type(C_PTR) :: d_A, d_B, d_C
-    type(C_PTR), dimension(:), allocatable :: h_d_A, h_d_B, h_d_C, streams
+    type(C_PTR), dimension(:), pointer :: h_d_A, h_d_B, h_d_C, streams
     type(C_PTR) :: handle
 
     integer :: sizeof_double
